@@ -1,6 +1,44 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
+    /*********** Recursividade ***********/
+
+    /*
+    //Recursividade 1-Torre
+void movetorre(int casas) {
+    // Se não possui mais casas para mover, implementado o return 
+    if (casas <= 0) {
+        return;
+    }
+
+    printf("A Torre andou 1 casa para a direita.\n");
+
+    // Chamada recursiva
+    movetorre(casas-1); 
+
+    //Recursividade 2-Bispo
+void movebispo(int casas) {
+    // Se não possui mais casas para mover, implementado o return 
+    if (casas <= 0) {
+        return;
+    }
+
+    printf("O Bispo andou 1 casa para a diagonal.\n");
+
+    // Chamada recursiva
+    movebispo(casas-1); 
+
+    //Recursividade 3-Rainha
+void moverainha(int casas) {
+    // Se não possui mais casas para mover, implementado o return 
+    if (casas <= 0) {
+        return;
+    }
+
+    printf("A rainha andou 1 casa para a esquerda.\n");
+
+    // Chamada recursiva
+    moverainha(casas-1); 
+*/
 
 int main() {
 
@@ -11,6 +49,7 @@ int main() {
     int casas_direita = 0;
     int casas_cima = 0;
     int casas_esquerda = 0;
+    int casas_baixo = 0;    
 
     /*********** Escolha da Peça ***********/
     //Apresenta para o usuário a opção para selecionar qual peça jogar
@@ -94,16 +133,13 @@ int main() {
 
     }
 
-
-    else  // (peca == 4)
-    { 
-
     /*********** Movimentação do Cavalo ***********/
     // Move-se em L. Deve movimentar-se duas casas para baixo e uma casa para a esquerda.
     //4-Cavalo
 
+    else if (peca == 4) { 
         for (int casas_cavalo = 1; casas_cavalo <= 3; casas_cavalo++) {  
-            if (casas_cavalo <= 2) {                                              //// tentar fazer com do-while
+            if (casas_cavalo <= 2) {                                             
             printf("Casa %d: Baixo\n", casas_cavalo);
             continue;
         }
@@ -113,9 +149,12 @@ int main() {
         }
     }
     
-
+    casas_esquerda += 1;
+    casas_baixo += 2;    
 
     }
+
+    else { printf("Jogadas Finalizadas!"); }
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
